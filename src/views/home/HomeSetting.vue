@@ -24,6 +24,9 @@
             </el-form-item>
           </el-col> -->
         </el-row> 
+        <el-form-item label="App 下载地址">
+          <el-input v-model="form.appDownloadLink"></el-input>
+        </el-form-item>
         <el-form-item label="底部协议">
           <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" v-model="form.bottomProtocol"></el-input>
           <el-alert

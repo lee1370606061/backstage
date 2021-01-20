@@ -4,17 +4,19 @@
       <el-card style="height:92.5vh;">
         <el-menu router>
           <el-menu-item index="/account"><i class="el-icon-user-solid"></i>账号管理</el-menu-item>
+          <el-menu-item index="/home-setting"><i class="el-icon-s-home"></i>首页配置</el-menu-item>
+          <el-menu-item index="/live-setting"><i class="el-icon-video-camera-solid"></i>直播页面配置</el-menu-item>
           <!-- <el-menu-item index="1-2"><i class="el-icon-menu"></i>Option 2</el-menu-item> -->
-          <el-submenu index="/" default-openeds="/home-setting,/live-setting">
+          <!-- <el-submenu index="/" default-openeds="/home-setting,/live-setting">
             <template slot="title"><i class="el-icon-setting"></i>页面配置</template>
             <el-menu-item index="/home-setting"><i class="el-icon-s-home"></i>首页配置</el-menu-item>
             <el-menu-item index="/live-setting"><i class="el-icon-video-camera-solid"></i>直播页面配置</el-menu-item>
-          <!-- <el-menu-item-group>
+          <el-menu-item-group>
             <template slot="title">Group 1</template>
             <el-menu-item index="2-1"><i class="el-icon-setting"></i> Option 1</el-menu-item>
             <el-menu-item index="1-2"><i class="el-icon-menu"></i>Option 2</el-menu-item>
-          </el-menu-item-group> -->
-          </el-submenu>
+          </el-menu-item-group>
+          </el-submenu> -->
         </el-menu>
       </el-card>
      
@@ -43,13 +45,7 @@ export default {
     return {
       tableData: Array(20).fill(item)
     }
-  },
-  methods: {
-    logout(){
-      this.$ls.clear()
-      this.$router.push('/login')
-    }
-  },
+  }
 };
 </script>
 <style lang="less">

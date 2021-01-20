@@ -2,6 +2,7 @@
 
 import Vue from 'vue';
 import axios from "axios";
+import router from "../router";
 import ls from "./localStorage.js";
 import { Message } from 'element-ui';
 
@@ -46,6 +47,15 @@ _axios.interceptors.response.use(
             return response.data.data;
         } else {
             Message.error(response.data.message);
+
+            if (response.data.status === 430) {
+                ls.clear()
+                setTimeout(() => {
+                    router.push('/login')
+                }, 2000);
+
+            }
+            return Promise.reject(response.data.msg)
         }
     },
     function(error) {
