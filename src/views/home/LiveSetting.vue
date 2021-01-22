@@ -15,10 +15,10 @@
           </el-col>
         </el-row> 
         <el-form-item label="底部广告跳转链接">
-          <el-input v-model="form.appDownloadLink"></el-input>
+          <el-input v-model="form.bottomPromoteLink"></el-input>
         </el-form-item>
         <el-form-item label="右边广告跳转链接">
-          <el-input v-model="form.appDownloadLink"></el-input>
+          <el-input v-model="form.rightPromoteLink"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="save">保存</el-button>
@@ -39,6 +39,8 @@ export default {
     return {
       loading: false,
       form: {
+        bottomPromoteLink: '',
+        rightPromoteLink: '',
         bottomPromoteSrc: '',
         rightPromoteSrc: ''
       }

@@ -61,6 +61,7 @@ export default {
         promoteLeftSrc: '',
         promoteRightSrc: '',
         bottomProtocol: '',
+        appDownloadLink: '',
       }
     };
   },

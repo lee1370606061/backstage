@@ -31,6 +31,7 @@ _axios.interceptors.request.use(
     },
     function(error) {
         // Do something with request error
+        Message.error(error.message);
         return Promise.reject(error);
     }
 );
@@ -60,6 +61,7 @@ _axios.interceptors.response.use(
     },
     function(error) {
         // Do something with response error
+        Message.error(error.message);
         return Promise.reject(error);
     }
 );

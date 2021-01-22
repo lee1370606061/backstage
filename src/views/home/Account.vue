@@ -2,7 +2,7 @@
   <div class="about">
     <el-card v-loading="loading" style="height:92.5vh;">
       <el-header style="text-align: end;">
-        <span style="margin-right: 15px">Admin</span>
+        <span style="margin-right: 15px">{{userName}}</span>
         <el-popconfirm
           confirm-button-text='是'
           cancel-button-text='否'
@@ -46,6 +46,11 @@ export default {
         confirmPassword: ''
       }
     };
+  },
+  computed: {
+    userName(){
+      return this.$ls.get('userInfo').username
+    }
   },
   methods: {
     logout(){
