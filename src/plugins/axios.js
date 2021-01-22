@@ -49,7 +49,7 @@ _axios.interceptors.response.use(
         } else {
             Message.error(response.data.message);
 
-            if (response.data.status === 430) {
+            if ([430, 403].includes(response.data.status)) {
                 ls.clear()
                 setTimeout(() => {
                     router.push('/login')
