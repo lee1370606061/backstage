@@ -14,6 +14,10 @@
 
 export default {
   props: {
+    ico: {
+      type: Boolean,
+      default: false
+    },
     imageUrl: {
       type: String,
       required: true
@@ -31,10 +35,15 @@ export default {
       file = file.raw
       console.log(file)
       const isImage = /[/.](gif|x-icon|jpg|jpeg|tiff|png)$/i.test(file.type);
+      const isIco = /(.ico)$/i.test(file.name);
       const isLt2M = file.size / 1024 / 1024 < 20;
 
       if (!isImage) {
         this.$message.error('请上传图片');
+        return
+      }
+      if (this.ico && !isIco) {
+        this.$message.error('仅接受 .ico 图片格式');
         return
       }
       if (!isLt2M) {

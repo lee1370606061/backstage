@@ -9,6 +9,11 @@
             </el-form-item>
           </el-col>
           <el-col :span="6">
+            <el-form-item label="页签图标">
+              <ImageUpload :imageUrl="form.titleLogoSrc" @success="res => form.titleLogoSrc = res" :ico="true" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
             <el-form-item label="左边广告">
               <ImageUpload :imageUrl="form.promoteLeftSrc" @success="res => form.promoteLeftSrc = res" />
             </el-form-item>
@@ -18,14 +23,25 @@
               <ImageUpload :imageUrl="form.promoteRightSrc" @success="res => form.promoteRightSrc = res" />
             </el-form-item>
           </el-col>
-          <!-- <el-col :span="6">
-            <el-form-item label="Activity name">
-              <ImageUpload :imageUrl="imageUrl" @success="res => imageUrl = res" />
-            </el-form-item>
-          </el-col> -->
         </el-row> 
+
         <el-form-item label="App 下载地址">
           <el-input v-model="form.appDownloadLink"></el-input>
+        </el-form-item>
+        <el-form-item label="页签标题">
+          <el-input v-model="form.title"></el-input>
+        </el-form-item>
+        <el-form-item label="底部广告（上）">
+          <el-input v-model="form.footPromoteTop"></el-input>
+        </el-form-item>
+        <el-form-item label="底部广告（下）">
+          <el-input v-model="form.footPromoteBottom"></el-input>
+        </el-form-item>
+        <el-form-item label='优化词（seo meta name="keywords"）'>
+          <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" v-model="form.seoKeywords"></el-input>
+        </el-form-item>
+        <el-form-item label='网站描述 seo meta name="description"）'>
+          <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" v-model="form.seoDescription"></el-input>
         </el-form-item>
         <el-form-item label="底部协议">
           <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 4}" v-model="form.bottomProtocol"></el-input>
@@ -57,11 +73,17 @@ export default {
     return {
       loading: false,
       form: {
-        logoSrc: '',
-        promoteLeftSrc: '',
-        promoteRightSrc: '',
-        bottomProtocol: '',
-        appDownloadLink: '',
+        logoSrc: "",
+        titleLogoSrc: "",
+        promoteLeftSrc: "",
+        promoteRightSrc: "",
+        appDownloadLink: "",
+        bottomProtocol: "",
+        title: "",
+        seoKeywords: "",
+        seoDescription: "",
+        footPromoteTop: "",
+        footPromoteBottom: ""
       }
     };
   },
