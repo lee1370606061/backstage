@@ -6,6 +6,13 @@
           <el-menu-item index="/account"><i class="el-icon-user-solid"></i>账号管理</el-menu-item>
           <el-menu-item index="/home-setting"><i class="el-icon-s-home"></i>首页配置</el-menu-item>
           <el-menu-item index="/live-setting"><i class="el-icon-video-camera-solid"></i>直播页面配置</el-menu-item>
+          <el-submenu index="/" default-openeds="/home-setting,/live-setting">
+            <template slot="title"><i class="el-icon-setting"></i>落地页配置</template>
+            <el-menu-item index="/promote-site-configuration"><i class="el-icon-s-home"></i>页面配置</el-menu-item>
+            <el-menu-item index="/promote-offer"><i class="el-icon-s-home"></i>优惠</el-menu-item>
+            <el-menu-item index="/promote-category"><i class="el-icon-s-home"></i>菜单</el-menu-item>
+            <el-menu-item index="/promote-product"><i class="el-icon-s-home"></i>产品列表</el-menu-item>
+          </el-submenu>
           <!-- <el-menu-item index="1-2"><i class="el-icon-menu"></i>Option 2</el-menu-item> -->
           <!-- <el-submenu index="/" default-openeds="/home-setting,/live-setting">
             <template slot="title"><i class="el-icon-setting"></i>页面配置</template>

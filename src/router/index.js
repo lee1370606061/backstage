@@ -26,6 +26,22 @@ const routes = [{
             path: "/live-setting",
             component: () =>
                 import ( /* webpackChunkName: "LiveSetting" */ "@/views/home/LiveSetting.vue")
+        }, {
+            path: "/promote-site-configuration",
+            component: () =>
+                import ( /* webpackChunkName: "LiveSetting" */ "@/views/promote/SiteConfiguration.vue")
+        }, {
+            path: "/promote-offer",
+            component: () =>
+                import ( /* webpackChunkName: "LiveSetting" */ "@/views/promote/Offer.vue")
+        }, {
+            path: "/promote-category",
+            component: () =>
+                import ( /* webpackChunkName: "LiveSetting" */ "@/views/promote/Category.vue")
+        }, {
+            path: "/promote-product",
+            component: () =>
+                import ( /* webpackChunkName: "LiveSetting" */ "@/views/promote/Product.vue")
         }]
     },
     {
